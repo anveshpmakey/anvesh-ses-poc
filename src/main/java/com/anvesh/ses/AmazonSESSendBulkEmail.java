@@ -15,6 +15,7 @@ import com.amazonaws.services.simpleemail.model.SendBulkTemplatedEmailRequest;
 import com.amazonaws.services.simpleemail.model.SendBulkTemplatedEmailResult;
 import com.amazonaws.services.simpleemail.model.SendTemplatedEmailRequest;
 import com.amazonaws.services.simpleemail.model.SendTemplatedEmailResult;
+import com.anvesh.caam.ExtractandFormatDatafForEmail;
 
 public class AmazonSESSendBulkEmail {
 	
@@ -55,6 +56,9 @@ public class AmazonSESSendBulkEmail {
 	private static void populateContacts() {
 		contacts.add(new Pair<String, String>("anveshpmakey@yahoo.com", "{ \"user\":\"Anvesh\" }"));
 		contacts.add(new Pair<String, String>("uh@caam.pk", "{ \"user\":\"Umer\" }"));
+		
+		//replace the above code with actual contact list from DB
+		//contacts = ExtractandFormatDatafForEmail.getContactInfoFromDB();
 	}
 	
 	public static void main(String[] args) throws Exception {
