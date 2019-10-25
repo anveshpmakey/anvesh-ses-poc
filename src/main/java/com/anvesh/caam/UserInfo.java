@@ -6,6 +6,11 @@ public class UserInfo {
 	private String firstName;
 	private String lastName;
 	
+	public UserInfo(String email, String firstName, String lastName) {
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 	public String getEmail() {
 		return email;
 	}

@@ -40,7 +40,8 @@ public class AmazonSESSendBulkEmail {
             
             BulkEmailDestination bulkEmailDestination = new BulkEmailDestination();
             bulkEmailDestination.setDestination(destination);
-            bulkEmailDestination.setReplacementTemplateData(String.format(dataFormat, contact.getValue()));
+            //bulkEmailDestination.setReplacementTemplateData(String.format(dataFormat, contact.getValue()));
+            bulkEmailDestination.setReplacementTemplateData(contact.getValue());
             bulkEmailDestinations.add(bulkEmailDestination);
         }
         
@@ -54,15 +55,15 @@ public class AmazonSESSendBulkEmail {
     }
 	
 	private static void populateContacts() {
-		contacts.add(new Pair<String, String>("anveshpmakey@yahoo.com", "{ \"user\":\"Anvesh\" }"));
-		contacts.add(new Pair<String, String>("uh@caam.pk", "{ \"user\":\"Umer\" }"));
+		//contacts.add(new Pair<String, String>("anveshpmakey@yahoo.com", "{\"user\":\"Anvesh\"}"));
+		//contacts.add(new Pair<String, String>("uh@caam.pk", "{\"user\":\"Umer\"}"));
 		
 		//replace the above code with actual contact list from DB
-		//contacts = ExtractandFormatDatafForEmail.getContactInfoFromDB();
+		contacts = ExtractandFormatDatafForEmail.getContactInfoFromDB();
 	}
 	
 	public static void main(String[] args) throws Exception {
-        AmazonSESCreateTemplate.createEmailTemplate();
+        //AmazonSESCreateTemplate.createEmailTemplate();
         try {
         	populateContacts();
             sendBulkEmail();
@@ -72,7 +73,7 @@ public class AmazonSESSendBulkEmail {
         	e.printStackTrace();
         }
         finally {
-        	AmazonSESCreateTemplate.deleteTemplate();
+        	//AmazonSESCreateTemplate.deleteTemplate();
         }
     }
 
