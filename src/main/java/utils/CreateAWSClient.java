@@ -16,7 +16,6 @@ public class CreateAWSClient {
 	static AmazonSimpleEmailService client = null;
 	
 	public static AmazonSimpleEmailService createAWSClient() {
-		//BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAQ2RG3Z63HTGZ5FVO", "oNrysRF0dFqLitdvJ7o1C7kxMiEkP2xm7bccI4Ku");
         
 		if (client == null) {
 			
